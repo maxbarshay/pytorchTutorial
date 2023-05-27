@@ -46,8 +46,8 @@ model = LinearRegression(input_size, output_size)
 print(f'Prediction before training: f(5) = {model(X_test).item():.3f}')
 
 # 2) Define loss and optimizer
-learning_rate = 0.01
-n_iters = 100
+learning_rate = 0.1
+n_iters = 1000
 
 loss = nn.MSELoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
@@ -69,7 +69,7 @@ for epoch in range(n_iters):
     # zero the gradients after updating
     optimizer.zero_grad()
 
-    if epoch % 10 == 0:
+    if epoch % 100 == 0:
         [w, b] = model.parameters() # unpack parameters
         print('epoch ', epoch+1, ': w = ', w[0][0].item(), ' loss = ', l)
 

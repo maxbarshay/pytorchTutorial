@@ -61,8 +61,7 @@ print(features, labels)
 # !!! IF YOU GET AN ERROR DURING LOADING, SET num_workers TO 0 !!!
 train_loader = DataLoader(dataset=dataset,
                           batch_size=4,
-                          shuffle=True,
-                          num_workers=2)
+                          shuffle=True)
 
 # convert to an iterator and look at one random sample
 dataiter = iter(train_loader)
